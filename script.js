@@ -22,6 +22,7 @@ const scratchProjectButtons = document.querySelectorAll("[data-scratch-project]"
 const inkScapeCarousels = document.querySelectorAll("[data-inkscape-carousel]");
 const unpluggedCarousels = document.querySelectorAll("[data-unplugged-carousel]");
 const microbitCarousels = document.querySelectorAll("[data-microbit-carousel]");
+const mediaSwitchButtons = document.querySelectorAll("[data-media-target]");
 let activeSlide = 0;
 let touchStartX = 0;
 let heroAutoplayTimer;
@@ -80,6 +81,32 @@ document.querySelectorAll("[data-page-link]").forEach((link) => {
 
 resultButtons.forEach((button) => {
   button.addEventListener("click", () => showResult(button.dataset.result));
+});
+
+mediaSwitchButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const resultPanel = button.closest("[data-result-panel]");
+    if (!resultPanel) return;
+
+    const targetName = button.dataset.mediaTarget;
+    resultPanel.querySelectorAll("[data-media-target]").forEach((item) => {
+      item.classList.toggle("is-active", item === button);
+    });
+    resultPanel.querySelectorAll("[data-media-panel]").forEach((panel) => {
+      const isTarget = panel.dataset.mediaPanel === targetName;
+      panel.hidden = !isTarget;
+    });
+
+    const activeScratchButton = resultPanel.querySelector(
+      `[data-media-panel="${targetName}"] [data-scratch-project]`
+    );
+    if (activeScratchButton) {
+      scratchProjectButtons.forEach((item) => {
+        item.classList.toggle("is-active", item === activeScratchButton);
+      });
+      loadScratchProject(activeScratchButton.dataset.scratchProject);
+    }
+  });
 });
 
 function loadScratchProject(projectPath) {

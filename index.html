@@ -141,9 +141,13 @@
             <span class="pill amber">不插電課程</span>
             <h3>不插電程式與運算思維</h3>
             <p>透過紙本任務、桌遊、排序、路徑規劃與合作解題，學生在沒有電腦的活動中練習序列、規則、分類與邏輯推理。</p>
+            <div class="media-switch" role="tablist" aria-label="不插電成果切換">
+              <button class="media-switch-button is-active" type="button" data-media-target="unplugged-photos">課堂照片</button>
+              <button class="media-switch-button" type="button" data-media-target="unplugged-video">成果影片</button>
+            </div>
           </div>
           <div class="unplugged-showcase">
-            <figure class="unplugged-photo-card" data-unplugged-carousel>
+            <figure class="unplugged-photo-card" data-media-panel="unplugged-photos" data-unplugged-carousel>
               <div class="unplugged-carousel-stage">
                 <img class="is-active" src="unplugged-works/unplugged-001.jpg" alt="不插電課程白板路徑規劃活動">
                 <img src="unplugged-works/unplugged-002.jpg" alt="不插電課程紙本像素解謎作品">
@@ -166,6 +170,12 @@
               <div class="unplugged-dots" aria-label="不插電課程照片切換"></div>
               <figcaption>課堂活動照片</figcaption>
             </figure>
+            <figure class="video-card" data-media-panel="unplugged-video" hidden>
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/_FgtTVH8PcI" title="不插電課程影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <figcaption>不插電課程影片</figcaption>
+            </figure>
           </div>
         </article>
 
@@ -174,16 +184,22 @@
             <span class="pill green">程式創作</span>
             <h3>Scratch 動畫、故事與遊戲</h3>
             <p>學生從角色、舞台與積木指令開始，逐步完成迷宮、互動故事、射擊與闖關作品，讓抽象邏輯變成看得見的作品。</p>
+            <div class="media-switch" role="tablist" aria-label="Scratch 作品類型切換">
+              <button class="media-switch-button is-active" type="button" data-media-target="scratch-animation">動畫</button>
+              <button class="media-switch-button" type="button" data-media-target="scratch-games">遊戲</button>
+            </div>
           </div>
           <div class="scratch-showcase">
             <div class="scratch-player">
               <iframe id="scratch-player-frame" title="Scratch 作品播放器" allowfullscreen></iframe>
             </div>
-            <div class="scratch-project-list" aria-label="Scratch 作品選單">
-              <button class="scratch-project-button is-active" type="button" data-scratch-project="scratch-projects/109087射擊外星人.sb3">射擊外星人</button>
+            <div class="scratch-project-list" data-media-panel="scratch-animation" aria-label="Scratch 動畫作品選單">
+              <button class="scratch-project-button is-active" type="button" data-scratch-project="scratch-projects/110181龜兔賽跑.sb3">龜兔賽跑</button>
+            </div>
+            <div class="scratch-project-list" data-media-panel="scratch-games" aria-label="Scratch 遊戲作品選單" hidden>
+              <button class="scratch-project-button" type="button" data-scratch-project="scratch-projects/109087射擊外星人.sb3">射擊外星人</button>
               <button class="scratch-project-button" type="button" data-scratch-project="scratch-projects/109103貪食蛇.sb3">貪食蛇</button>
               <button class="scratch-project-button" type="button" data-scratch-project="scratch-projects/109016打地鼠.sb3">打地鼠</button>
-              <button class="scratch-project-button" type="button" data-scratch-project="scratch-projects/110181龜兔賽跑.sb3">龜兔賽跑</button>
               <button class="scratch-project-button" type="button" data-scratch-project="scratch-projects/109108移動迷宮.sb3">移動迷宮</button>
             </div>
           </div>
@@ -194,9 +210,14 @@
             <span class="pill rose">向量繪圖</span>
             <h3>Inkscape 圖形設計</h3>
             <p>透過形狀、節點、色彩與排版練習，學生製作標誌、徽章、海報與輸出圖稿，培養資訊課中的視覺表達能力。</p>
+            <div class="media-switch" role="tablist" aria-label="Inkscape 作品類型切換">
+              <button class="media-switch-button is-active" type="button" data-media-target="inkscape-ocean">海洋日海報</button>
+              <button class="media-switch-button" type="button" data-media-target="inkscape-character">卡通人物</button>
+              <button class="media-switch-button" type="button" data-media-target="inkscape-logo">標誌測驗</button>
+            </div>
           </div>
           <div class="inkscape-gallery">
-            <figure class="inkscape-card" data-inkscape-carousel>
+            <figure class="inkscape-card" data-media-panel="inkscape-ocean" data-inkscape-carousel>
               <div class="inkscape-carousel-stage">
                 <img class="is-active" src="inkscape-works/inkscape-001.svg" alt="Inkscape 海洋日海報作品">
                 <img src="inkscape-works/inkscape-002.svg" alt="Inkscape 海洋日海報作品">
@@ -206,7 +227,7 @@
               <div class="inkscape-dots" aria-label="海洋日海報作品切換"></div>
               <figcaption>海洋日海報</figcaption>
             </figure>
-            <figure class="inkscape-card" data-inkscape-carousel>
+            <figure class="inkscape-card" data-media-panel="inkscape-character" data-inkscape-carousel hidden>
               <div class="inkscape-carousel-stage">
                 <img class="is-active" src="inkscape-works/inkscape-003.svg" alt="Inkscape 卡通人物作品">
                 <img src="inkscape-works/inkscape-004.svg" alt="Inkscape 卡通人物作品">
@@ -222,7 +243,7 @@
               <div class="inkscape-dots" aria-label="卡通人物作品切換"></div>
               <figcaption>卡通人物</figcaption>
             </figure>
-            <figure class="inkscape-card" data-inkscape-carousel>
+            <figure class="inkscape-card" data-media-panel="inkscape-logo" data-inkscape-carousel hidden>
               <div class="inkscape-carousel-stage">
                 <img class="is-active" src="inkscape-works/inkscape-011.svg" alt="Inkscape 標誌測驗作品">
                 <img src="inkscape-works/inkscape-012.svg" alt="Inkscape 標誌測驗作品">
@@ -241,9 +262,13 @@
             <span class="pill blue">實體運算</span>
             <h3>micro:bit 感測互動</h3>
             <p>以 LED、按鈕、無線廣播與感測器完成倒數計時、呼吸燈、遙控與生活情境任務，把程式帶到真實世界。</p>
+            <div class="media-switch" role="tablist" aria-label="micro:bit 成果切換">
+              <button class="media-switch-button is-active" type="button" data-media-target="microbit-photos">課堂照片</button>
+              <button class="media-switch-button" type="button" data-media-target="microbit-video">成果影片</button>
+            </div>
           </div>
           <div class="microbit-showcase">
-            <figure class="microbit-photo-card" data-microbit-carousel>
+            <figure class="microbit-photo-card" data-media-panel="microbit-photos" data-microbit-carousel>
               <div class="microbit-carousel-stage">
                 <img class="is-active" src="microbit-works/microbit-photo-001.jpg" alt="學生測試 micro:bit 小車作品">
                 <img src="microbit-works/microbit-photo-002.png" alt="學生操作 micro:bit 電路">
@@ -257,21 +282,12 @@
               <div class="microbit-dots" aria-label="micro:bit 課堂照片切換"></div>
               <figcaption>課堂實作照片</figcaption>
             </figure>
-
-            <div class="microbit-code-grid">
-              <figure class="microbit-code-card">
-                <img src="microbit-works/microbit-code-001.png" alt="micro:bit 猜拳程式積木">
-                <figcaption>猜拳遊戲</figcaption>
-              </figure>
-              <figure class="microbit-code-card">
-                <img src="microbit-works/microbit-code-002.png" alt="micro:bit 骰子程式積木">
-                <figcaption>電子骰子</figcaption>
-              </figure>
-              <figure class="microbit-code-card">
-                <img src="microbit-works/microbit-code-003.png" alt="micro:bit 點燈程式積木">
-                <figcaption>LED 點燈</figcaption>
-              </figure>
-            </div>
+            <figure class="video-card" data-media-panel="microbit-video" hidden>
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/rCP5Z_kW880?start=51" title="micro:bit 成果影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <figcaption>micro:bit 成果影片</figcaption>
+            </figure>
           </div>
         </article>
 
