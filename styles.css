@@ -797,13 +797,10 @@ h1 {
 
 .unplugged-dots,
 .microbit-dots {
-  position: absolute;
-  left: 50%;
-  bottom: 48px;
-  z-index: 2;
   display: flex;
+  justify-content: center;
   gap: 7px;
-  transform: translateX(-50%);
+  padding: 10px 14px 0;
 }
 
 .unplugged-dot,
@@ -825,9 +822,17 @@ h1 {
 .unplugged-photo-card figcaption,
 .microbit-photo-card figcaption,
 .microbit-code-card figcaption {
-  padding: 12px 14px 14px;
+  padding: 12px 14px 6px;
   color: var(--ink);
   font-weight: 900;
+}
+
+.photo-note {
+  margin: 0;
+  padding: 0 14px 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: .98rem;
 }
 
 .microbit-code-grid {

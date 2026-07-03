@@ -299,6 +299,7 @@ inkScapeCarousels.forEach((carousel, carouselIndex) => {
 unpluggedCarousels.forEach((carousel) => {
   const images = carousel.querySelectorAll("img");
   const dotGroup = carousel.querySelector(".unplugged-dots");
+  const note = carousel.querySelector(".photo-note");
   const prevButton = carousel.querySelector("[data-unplugged-prev]");
   const nextButton = carousel.querySelector("[data-unplugged-next]");
   if (images.length <= 1) return;
@@ -326,6 +327,7 @@ unpluggedCarousels.forEach((carousel) => {
     activeImage = (imageIndex + images.length) % images.length;
     images[activeImage].classList.add("is-active");
     dots[activeImage]?.classList.add("is-active");
+    if (note) note.textContent = images[activeImage].dataset.note || "";
   }
 
   function restartUnpluggedAutoplay() {
@@ -352,6 +354,7 @@ unpluggedCarousels.forEach((carousel) => {
 microbitCarousels.forEach((carousel) => {
   const images = carousel.querySelectorAll("img");
   const dotGroup = carousel.querySelector(".microbit-dots");
+  const note = carousel.querySelector(".photo-note");
   const prevButton = carousel.querySelector("[data-microbit-prev]");
   const nextButton = carousel.querySelector("[data-microbit-next]");
   if (images.length <= 1) return;
@@ -379,6 +382,7 @@ microbitCarousels.forEach((carousel) => {
     activeImage = (imageIndex + images.length) % images.length;
     images[activeImage].classList.add("is-active");
     dots[activeImage]?.classList.add("is-active");
+    if (note) note.textContent = images[activeImage].dataset.note || "";
   }
 
   function restartMicrobitAutoplay() {
