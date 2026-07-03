@@ -17,6 +17,8 @@ const autoCarousels = document.querySelectorAll("[data-auto-carousel]");
 const activePageEyebrow = document.querySelector("#active-page-eyebrow");
 const activePageTitle = document.querySelector("#active-page-title");
 const heroPageTitle = document.querySelector(".hero-page-title");
+const scratchPlayerFrame = document.querySelector("#scratch-player-frame");
+const scratchProjectButtons = document.querySelectorAll("[data-scratch-project]");
 let activeSlide = 0;
 let touchStartX = 0;
 let heroAutoplayTimer;
@@ -76,6 +78,24 @@ document.querySelectorAll("[data-page-link]").forEach((link) => {
 resultButtons.forEach((button) => {
   button.addEventListener("click", () => showResult(button.dataset.result));
 });
+
+function loadScratchProject(projectPath) {
+  if (!scratchPlayerFrame) return;
+
+  const projectUrl = new URL(projectPath, window.location.href).href;
+  scratchPlayerFrame.src = `https://turbowarp.org/embed?project_url=${encodeURIComponent(projectUrl)}`;
+}
+
+scratchProjectButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    scratchProjectButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+    loadScratchProject(button.dataset.scratchProject);
+  });
+});
+
+if (scratchProjectButtons.length > 0) {
+  loadScratchProject(scratchProjectButtons[0].dataset.scratchProject);
+}
 
 function setHeroSliderHeight() {
   if (!heroSlider || !heroBoard) return;
