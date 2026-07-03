@@ -129,13 +129,47 @@
 
       <section class="page-panel" id="results" data-page-panel="results" hidden>
         <div class="result-tabs" role="tablist" aria-label="教學成果分類">
-          <button class="result-tab is-active" type="button" data-result="scratch">Scratch</button>
+          <button class="result-tab is-active" type="button" data-result="unplugged">不插電</button>
+          <button class="result-tab" type="button" data-result="scratch">Scratch</button>
           <button class="result-tab" type="button" data-result="inkscape">Inkscape</button>
           <button class="result-tab" type="button" data-result="microbit">micro:bit</button>
           <button class="result-tab" type="button" data-result="print3d">3D 列印</button>
         </div>
 
-        <article class="result-panel is-visible" data-result-panel="scratch">
+        <article class="result-panel is-visible" data-result-panel="unplugged">
+          <div class="result-copy">
+            <span class="pill amber">不插電課程</span>
+            <h3>不插電程式與運算思維</h3>
+            <p>透過紙本任務、桌遊、排序、路徑規劃與合作解題，學生在沒有電腦的活動中練習序列、規則、分類與邏輯推理。</p>
+          </div>
+          <div class="unplugged-showcase">
+            <figure class="unplugged-photo-card" data-unplugged-carousel>
+              <div class="unplugged-carousel-stage">
+                <img class="is-active" src="unplugged-works/unplugged-001.jpg" alt="不插電課程白板路徑規劃活動">
+                <img src="unplugged-works/unplugged-002.jpg" alt="不插電課程紙本像素解謎作品">
+                <img src="unplugged-works/unplugged-003.jpg" alt="不插電課程紙本圖像判讀作品">
+                <img src="unplugged-works/unplugged-004.jpg" alt="不插電課程教師引導解題">
+                <img src="unplugged-works/unplugged-005.jpg" alt="不插電課程桌遊活動">
+                <img src="unplugged-works/unplugged-006.jpg" alt="不插電課程紙本分類練習">
+                <img src="unplugged-works/unplugged-007.jpg" alt="不插電課程紙本排序練習">
+                <img src="unplugged-works/unplugged-008.jpg" alt="不插電課程小組桌遊">
+                <img src="unplugged-works/unplugged-009.jpg" alt="不插電課程迷宮閱讀教學">
+                <img src="unplugged-works/unplugged-010.jpg" alt="不插電課程密碼解題學習單">
+                <img src="unplugged-works/unplugged-011.jpg" alt="不插電課程學生操作紙本任務">
+                <img src="unplugged-works/unplugged-012.jpg" alt="不插電課程全班紙本實作">
+                <img src="unplugged-works/unplugged-013.jpg" alt="不插電課程棋盤邏輯任務">
+                <img src="unplugged-works/unplugged-014.jpg" alt="不插電課程小組配對桌遊">
+                <img src="unplugged-works/unplugged-015.jpg" alt="不插電課程小組桌遊討論">
+              </div>
+              <button class="unplugged-arrow unplugged-arrow-prev" type="button" data-unplugged-prev aria-label="上一張">‹</button>
+              <button class="unplugged-arrow unplugged-arrow-next" type="button" data-unplugged-next aria-label="下一張">›</button>
+              <div class="unplugged-dots" aria-label="不插電課程照片切換"></div>
+              <figcaption>課堂活動照片</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="result-panel" data-result-panel="scratch" hidden>
           <div class="result-copy">
             <span class="pill green">程式創作</span>
             <h3>Scratch 動畫、故事與遊戲</h3>
@@ -161,19 +195,44 @@
             <h3>Inkscape 圖形設計</h3>
             <p>透過形狀、節點、色彩與排版練習，學生製作標誌、徽章、海報與輸出圖稿，培養資訊課中的視覺表達能力。</p>
           </div>
-          <div class="work-grid">
-            <div class="work-card">
-              <strong>造形練習</strong>
-              <p>幾何圖案、對齊、漸層、圖層管理。</p>
-            </div>
-            <div class="work-card">
-              <strong>主題海報</strong>
-              <p>結合資訊安全、校園活動與創意文字。</p>
-            </div>
-            <div class="work-card">
-              <strong>輸出應用</strong>
-              <p>轉成 PNG、SVG 或後續雷切與 3D 建模參考。</p>
-            </div>
+          <div class="inkscape-gallery">
+            <figure class="inkscape-card" data-inkscape-carousel>
+              <div class="inkscape-carousel-stage">
+                <img class="is-active" src="inkscape-works/inkscape-001.svg" alt="Inkscape 海洋日海報作品">
+                <img src="inkscape-works/inkscape-002.svg" alt="Inkscape 海洋日海報作品">
+              </div>
+              <button class="inkscape-arrow inkscape-arrow-prev" type="button" data-inkscape-prev aria-label="上一張">‹</button>
+              <button class="inkscape-arrow inkscape-arrow-next" type="button" data-inkscape-next aria-label="下一張">›</button>
+              <div class="inkscape-dots" aria-label="海洋日海報作品切換"></div>
+              <figcaption>海洋日海報</figcaption>
+            </figure>
+            <figure class="inkscape-card" data-inkscape-carousel>
+              <div class="inkscape-carousel-stage">
+                <img class="is-active" src="inkscape-works/inkscape-003.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-004.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-005.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-006.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-007.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-008.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-009.svg" alt="Inkscape 卡通人物作品">
+                <img src="inkscape-works/inkscape-010.svg" alt="Inkscape 卡通人物作品">
+              </div>
+              <button class="inkscape-arrow inkscape-arrow-prev" type="button" data-inkscape-prev aria-label="上一張">‹</button>
+              <button class="inkscape-arrow inkscape-arrow-next" type="button" data-inkscape-next aria-label="下一張">›</button>
+              <div class="inkscape-dots" aria-label="卡通人物作品切換"></div>
+              <figcaption>卡通人物</figcaption>
+            </figure>
+            <figure class="inkscape-card" data-inkscape-carousel>
+              <div class="inkscape-carousel-stage">
+                <img class="is-active" src="inkscape-works/inkscape-011.svg" alt="Inkscape 標誌測驗作品">
+                <img src="inkscape-works/inkscape-012.svg" alt="Inkscape 標誌測驗作品">
+                <img src="inkscape-works/inkscape-013.svg" alt="Inkscape 標誌測驗作品">
+              </div>
+              <button class="inkscape-arrow inkscape-arrow-prev" type="button" data-inkscape-prev aria-label="上一張">‹</button>
+              <button class="inkscape-arrow inkscape-arrow-next" type="button" data-inkscape-next aria-label="下一張">›</button>
+              <div class="inkscape-dots" aria-label="標誌測驗作品切換"></div>
+              <figcaption>標誌測驗</figcaption>
+            </figure>
           </div>
         </article>
 
@@ -183,18 +242,35 @@
             <h3>micro:bit 感測互動</h3>
             <p>以 LED、按鈕、無線廣播與感測器完成倒數計時、呼吸燈、遙控與生活情境任務，把程式帶到真實世界。</p>
           </div>
-          <div class="work-grid">
-            <div class="work-card">
-              <strong>LED 顯示</strong>
-              <p>圖案、動畫、訊息與變數顯示。</p>
-            </div>
-            <div class="work-card">
-              <strong>感測任務</strong>
-              <p>加速度、亮度、溫度與按鈕事件。</p>
-            </div>
-            <div class="work-card">
-              <strong>無線互動</strong>
-              <p>發送端與接收端協作，完成控制挑戰。</p>
+          <div class="microbit-showcase">
+            <figure class="microbit-photo-card" data-microbit-carousel>
+              <div class="microbit-carousel-stage">
+                <img class="is-active" src="microbit-works/microbit-photo-001.jpg" alt="學生測試 micro:bit 小車作品">
+                <img src="microbit-works/microbit-photo-002.png" alt="學生操作 micro:bit 電路">
+                <img src="microbit-works/microbit-photo-003.png" alt="micro:bit 接線與程式操作">
+                <img src="microbit-works/microbit-photo-004.png" alt="micro:bit 電路實作">
+                <img src="microbit-works/microbit-photo-005.jpg" alt="學生使用 micro:bit 編寫程式">
+                <img src="microbit-works/microbit-photo-006.jpg" alt="學生測試 micro:bit 程式">
+              </div>
+              <button class="microbit-arrow microbit-arrow-prev" type="button" data-microbit-prev aria-label="上一張">‹</button>
+              <button class="microbit-arrow microbit-arrow-next" type="button" data-microbit-next aria-label="下一張">›</button>
+              <div class="microbit-dots" aria-label="micro:bit 課堂照片切換"></div>
+              <figcaption>課堂實作照片</figcaption>
+            </figure>
+
+            <div class="microbit-code-grid">
+              <figure class="microbit-code-card">
+                <img src="microbit-works/microbit-code-001.png" alt="micro:bit 猜拳程式積木">
+                <figcaption>猜拳遊戲</figcaption>
+              </figure>
+              <figure class="microbit-code-card">
+                <img src="microbit-works/microbit-code-002.png" alt="micro:bit 骰子程式積木">
+                <figcaption>電子骰子</figcaption>
+              </figure>
+              <figure class="microbit-code-card">
+                <img src="microbit-works/microbit-code-003.png" alt="micro:bit 點燈程式積木">
+                <figcaption>LED 點燈</figcaption>
+              </figure>
             </div>
           </div>
         </article>

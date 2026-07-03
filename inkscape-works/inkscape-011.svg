@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg12"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="中華電信.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.68111408"
+     inkscape:cx="502.85262"
+     inkscape:cy="696.65275"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs9" />
+  <g
+     inkscape:label="圖層 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2517"
+       style="fill:#5fbcd3;fill-opacity:1;stroke-width:0.264583"
+       d="M 93.931717,88.311003 A 63.626125,64.071068 0 0 0 62.360518,96.76475 H 125.5117 A 63.626125,64.071068 0 0 0 93.931717,88.311003 Z M 50.439798,105.66343 a 63.626125,64.071068 0 0 0 -7.139099,8.00881 H 144.59684 a 63.626125,64.071068 0 0 0 -7.12514,-8.00881 z m -12.77338,16.90801 a 63.626125,64.071068 0 0 0 -3.656624,8.45375 H 153.86915 a 63.626125,64.071068 0 0 0 -3.64836,-8.45375 z m -6.105054,17.35243 a 63.626125,64.071068 0 0 0 -1.079521,8.00881 H 157.38418 a 63.626125,64.071068 0 0 0 -1.07384,-8.00881 z m -1.094507,16.9075 a 63.626125,64.071068 0 0 0 1.069186,8.00881 H 156.32688 a 63.626125,64.071068 0 0 0 1.06918,-8.00881 z m 3.502629,16.90749 a 63.626125,64.071068 0 0 0 3.451986,8.00933 H 150.44145 a 63.626125,64.071068 0 0 0 3.45199,-8.00933 z m 8.992733,16.90801 a 63.626125,64.071068 0 0 0 6.154663,7.11895 h 89.629158 a 63.626125,64.071068 0 0 0 6.15466,-7.11895 z m 17.296102,16.01763 a 63.626125,64.071068 0 0 0 33.673396,9.78855 63.626125,64.071068 0 0 0 33.672883,-9.78855 z" />
+    <path
+       id="path3042"
+       style="fill:#5fbcd3;fill-opacity:1;stroke-width:0.233029"
+       d="m 89.307705,191.39833 v 26.28935 A 43.942386,39.266685 0 0 0 132.17279,178.43272 43.942386,39.266685 0 0 0 89.307705,139.17826 v 24.80779 h 23.381515 v 27.41228 z" />
+    <path
+       id="path3300"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.233029"
+       d="m 89.905955,88.521149 a 43.942386,39.266685 0 0 0 -0.63252,-0.007 43.942386,39.266685 0 0 0 -43.94202,39.266861 43.942386,39.266685 0 0 0 43.94202,39.26685 43.942386,39.266685 0 0 0 0.63252,-0.007 V 140.74634 H 67.717122 v -27.41228 h 22.188833 z" />
+  </g>
+</svg>

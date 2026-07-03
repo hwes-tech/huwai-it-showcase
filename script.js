@@ -1,4 +1,4 @@
-const pageButtons = document.querySelectorAll("[data-page]");
+﻿const pageButtons = document.querySelectorAll("[data-page]");
 const pagePanels = document.querySelectorAll("[data-page-panel]");
 const navTabs = document.querySelectorAll(".nav-tab");
 const resultButtons = document.querySelectorAll("[data-result]");
@@ -19,6 +19,9 @@ const activePageTitle = document.querySelector("#active-page-title");
 const heroPageTitle = document.querySelector(".hero-page-title");
 const scratchPlayerFrame = document.querySelector("#scratch-player-frame");
 const scratchProjectButtons = document.querySelectorAll("[data-scratch-project]");
+const inkScapeCarousels = document.querySelectorAll("[data-inkscape-carousel]");
+const unpluggedCarousels = document.querySelectorAll("[data-unplugged-carousel]");
+const microbitCarousels = document.querySelectorAll("[data-microbit-carousel]");
 let activeSlide = 0;
 let touchStartX = 0;
 let heroAutoplayTimer;
@@ -192,7 +195,7 @@ autoCarousels.forEach((carousel) => {
     const dot = document.createElement("button");
     dot.className = "honor-carousel-dot";
     dot.type = "button";
-    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張`);
+    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張照片`);
     dot.addEventListener("click", () => showHonorImage(index));
     dotGroup?.appendChild(dot);
   });
@@ -212,4 +215,162 @@ autoCarousels.forEach((carousel) => {
 
   showHonorImage(0);
   window.setInterval(() => showHonorImage(activeImage + 1), 3200);
+});
+
+inkScapeCarousels.forEach((carousel, carouselIndex) => {
+  const images = carousel.querySelectorAll("img");
+  const dotGroup = carousel.querySelector(".inkscape-dots");
+  const prevButton = carousel.querySelector("[data-inkscape-prev]");
+  const nextButton = carousel.querySelector("[data-inkscape-next]");
+  if (images.length <= 1) return;
+
+  let activeImage = 0;
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "inkscape-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張照片`);
+    dot.addEventListener("click", () => {
+      showInkscapeImage(index);
+      restartInkscapeAutoplay();
+    });
+    dotGroup?.appendChild(dot);
+  });
+
+  const dots = carousel.querySelectorAll(".inkscape-dot");
+  let autoplayTimer;
+
+  function showInkscapeImage(imageIndex) {
+    images[activeImage].classList.remove("is-active");
+    dots[activeImage]?.classList.remove("is-active");
+    activeImage = (imageIndex + images.length) % images.length;
+    images[activeImage].classList.add("is-active");
+    dots[activeImage]?.classList.add("is-active");
+  }
+
+  function restartInkscapeAutoplay() {
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = window.setInterval(() => {
+      showInkscapeImage(activeImage + 1);
+    }, 3000 + carouselIndex * 400);
+  }
+
+  prevButton?.addEventListener("click", () => {
+    showInkscapeImage(activeImage - 1);
+    restartInkscapeAutoplay();
+  });
+  nextButton?.addEventListener("click", () => {
+    showInkscapeImage(activeImage + 1);
+    restartInkscapeAutoplay();
+  });
+
+  showInkscapeImage(0);
+  restartInkscapeAutoplay();
+});
+
+unpluggedCarousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
+  const dotGroup = carousel.querySelector(".unplugged-dots");
+  const prevButton = carousel.querySelector("[data-unplugged-prev]");
+  const nextButton = carousel.querySelector("[data-unplugged-next]");
+  if (images.length <= 1) return;
+
+  let activeImage = 0;
+  let autoplayTimer;
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "unplugged-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張照片`);
+    dot.addEventListener("click", () => {
+      showUnpluggedImage(index);
+      restartUnpluggedAutoplay();
+    });
+    dotGroup?.appendChild(dot);
+  });
+
+  const dots = carousel.querySelectorAll(".unplugged-dot");
+
+  function showUnpluggedImage(imageIndex) {
+    images[activeImage].classList.remove("is-active");
+    dots[activeImage]?.classList.remove("is-active");
+    activeImage = (imageIndex + images.length) % images.length;
+    images[activeImage].classList.add("is-active");
+    dots[activeImage]?.classList.add("is-active");
+  }
+
+  function restartUnpluggedAutoplay() {
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = window.setInterval(() => {
+      showUnpluggedImage(activeImage + 1);
+    }, 3300);
+  }
+
+  prevButton?.addEventListener("click", () => {
+    showUnpluggedImage(activeImage - 1);
+    restartUnpluggedAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    showUnpluggedImage(activeImage + 1);
+    restartUnpluggedAutoplay();
+  });
+
+  showUnpluggedImage(0);
+  restartUnpluggedAutoplay();
+});
+
+microbitCarousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
+  const dotGroup = carousel.querySelector(".microbit-dots");
+  const prevButton = carousel.querySelector("[data-microbit-prev]");
+  const nextButton = carousel.querySelector("[data-microbit-next]");
+  if (images.length <= 1) return;
+
+  let activeImage = 0;
+  let autoplayTimer;
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "microbit-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張照片`);
+    dot.addEventListener("click", () => {
+      showMicrobitImage(index);
+      restartMicrobitAutoplay();
+    });
+    dotGroup?.appendChild(dot);
+  });
+
+  const dots = carousel.querySelectorAll(".microbit-dot");
+
+  function showMicrobitImage(imageIndex) {
+    images[activeImage].classList.remove("is-active");
+    dots[activeImage]?.classList.remove("is-active");
+    activeImage = (imageIndex + images.length) % images.length;
+    images[activeImage].classList.add("is-active");
+    dots[activeImage]?.classList.add("is-active");
+  }
+
+  function restartMicrobitAutoplay() {
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = window.setInterval(() => {
+      showMicrobitImage(activeImage + 1);
+    }, 3200);
+  }
+
+  prevButton?.addEventListener("click", () => {
+    showMicrobitImage(activeImage - 1);
+    restartMicrobitAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    showMicrobitImage(activeImage + 1);
+    restartMicrobitAutoplay();
+  });
+
+  showMicrobitImage(0);
+  restartMicrobitAutoplay();
 });
