@@ -752,6 +752,7 @@ h1 {
 }
 
 .unplugged-photo-card,
+.camp-photo-card,
 .microbit-photo-card,
 .microbit-code-card,
 .video-card {
@@ -764,11 +765,13 @@ h1 {
 }
 
 .unplugged-photo-card,
+.camp-photo-card,
 .microbit-photo-card {
   position: relative;
 }
 
 .unplugged-carousel-stage,
+.camp-carousel-stage,
 .microbit-carousel-stage {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -776,6 +779,7 @@ h1 {
 }
 
 .unplugged-carousel-stage img,
+.camp-carousel-stage img,
 .microbit-carousel-stage img {
   position: absolute;
   inset: 0;
@@ -788,12 +792,14 @@ h1 {
 }
 
 .unplugged-carousel-stage img.is-active,
+.camp-carousel-stage img.is-active,
 .microbit-carousel-stage img.is-active {
   opacity: 1;
   transform: scale(1);
 }
 
 .unplugged-arrow,
+.camp-arrow,
 .microbit-arrow {
   position: absolute;
   top: calc(50% - 18px);
@@ -810,16 +816,19 @@ h1 {
 }
 
 .unplugged-arrow-prev,
+.camp-arrow-prev,
 .microbit-arrow-prev {
   left: 12px;
 }
 
 .unplugged-arrow-next,
+.camp-arrow-next,
 .microbit-arrow-next {
   right: 12px;
 }
 
 .unplugged-dots,
+.camp-dots,
 .microbit-dots {
   display: flex;
   justify-content: center;
@@ -828,6 +837,7 @@ h1 {
 }
 
 .unplugged-dot,
+.camp-dot,
 .microbit-dot {
   width: 22px;
   height: 7px;
@@ -839,6 +849,7 @@ h1 {
 }
 
 .unplugged-dot.is-active,
+.camp-dot.is-active,
 .microbit-dot.is-active {
   background: var(--ink);
 }
@@ -857,6 +868,71 @@ h1 {
   color: var(--muted);
   line-height: 1.7;
   font-size: .98rem;
+}
+
+.camp-photo-note {
+  margin: 0;
+  padding: 14px 18px 18px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.camp-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.camp-day-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.camp-day-panel[hidden] {
+  display: none;
+}
+
+.camp-note,
+.camp-empty {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(37, 43, 58, .08);
+}
+
+.camp-note h4,
+.camp-empty h4 {
+  margin: 0 0 10px;
+  font-size: 1.24rem;
+}
+
+.camp-note p,
+.camp-empty p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.primary-link-button {
+  min-height: 44px;
+  margin-top: 18px;
+  padding: 0 20px;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  color: #fff;
+  background: var(--green);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(22, 132, 95, .18);
+}
+
+.camp-arrow-prev::before {
+  content: "<";
+}
+
+.camp-arrow-next::before {
+  content: ">";
 }
 
 .microbit-code-grid {

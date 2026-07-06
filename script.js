@@ -25,6 +25,10 @@ const inkScapeCarousels = document.querySelectorAll("[data-inkscape-carousel]");
 const unpluggedCarousels = document.querySelectorAll("[data-unplugged-carousel]");
 const microbitCarousels = document.querySelectorAll("[data-microbit-carousel]");
 const mediaSwitchButtons = document.querySelectorAll("[data-media-target]");
+const campDayButtons = document.querySelectorAll("[data-camp-day]");
+const campDayPanels = document.querySelectorAll("[data-camp-day-panel]");
+const campCarousels = document.querySelectorAll("[data-camp-carousel]");
+const campResultLinks = document.querySelectorAll("[data-camp-result-link]");
 let activeSlide = 0;
 let touchStartX = 0;
 let heroAutoplayTimer;
@@ -33,6 +37,7 @@ const pageTitles = {
   structure: { eyebrow: "Curriculum", title: "課程架構" },
   honor: { eyebrow: "Honor Roll", title: "榮譽榜" },
   results: { eyebrow: "Learning Works", title: "教學成果" },
+  camp: { eyebrow: "Camp Activities", title: "營隊活動" },
 };
 
 function updateActivePageTitle(pageName) {
@@ -83,6 +88,34 @@ document.querySelectorAll("[data-page-link]").forEach((link) => {
 
 resultButtons.forEach((button) => {
   button.addEventListener("click", () => showResult(button.dataset.result));
+});
+
+campDayButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const dayName = button.dataset.campDay;
+    campDayButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+    campDayPanels.forEach((panel) => {
+      const isTarget = panel.dataset.campDayPanel === dayName;
+      panel.hidden = !isTarget;
+      panel.classList.toggle("is-visible", isTarget);
+    });
+  });
+});
+
+function showScratchGameResults() {
+  showPage("results");
+  showResult("scratch");
+
+  const scratchPanel = document.querySelector('[data-result-panel="scratch"]');
+  const gameSwitchButton = scratchPanel?.querySelector('[data-media-target="scratch-games"]');
+  const whackMoleButton = scratchPanel?.querySelector('[data-scratch-toggle="whack-mole"]');
+  gameSwitchButton?.click();
+  whackMoleButton?.click();
+  scratchPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+campResultLinks.forEach((button) => {
+  button.addEventListener("click", showScratchGameResults);
 });
 
 mediaSwitchButtons.forEach((button) => {
@@ -272,6 +305,61 @@ autoCarousels.forEach((carousel) => {
 
   showHonorImage(0);
   window.setInterval(() => showHonorImage(activeImage + 1), 3200);
+});
+
+campCarousels.forEach((carousel) => {
+  const images = carousel.querySelectorAll("img");
+  const dotGroup = carousel.querySelector(".camp-dots");
+  const note = carousel.querySelector(".camp-photo-note");
+  const prevButton = carousel.querySelector("[data-camp-prev]");
+  const nextButton = carousel.querySelector("[data-camp-next]");
+  if (images.length <= 1) return;
+
+  let activeImage = 0;
+  let autoplayTimer;
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "camp-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `切換到第 ${index + 1} 張照片`);
+    dot.addEventListener("click", () => {
+      showCampImage(index);
+      restartCampAutoplay();
+    });
+    dotGroup?.appendChild(dot);
+  });
+
+  const dots = carousel.querySelectorAll(".camp-dot");
+
+  function showCampImage(imageIndex) {
+    images[activeImage].classList.remove("is-active");
+    dots[activeImage]?.classList.remove("is-active");
+    activeImage = (imageIndex + images.length) % images.length;
+    images[activeImage].classList.add("is-active");
+    dots[activeImage]?.classList.add("is-active");
+    if (note) note.textContent = images[activeImage].dataset.note || "";
+  }
+
+  function restartCampAutoplay() {
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = window.setInterval(() => {
+      showCampImage(activeImage + 1);
+    }, 3200);
+  }
+
+  prevButton?.addEventListener("click", () => {
+    showCampImage(activeImage - 1);
+    restartCampAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    showCampImage(activeImage + 1);
+    restartCampAutoplay();
+  });
+
+  showCampImage(0);
+  restartCampAutoplay();
 });
 
 inkScapeCarousels.forEach((carousel, carouselIndex) => {

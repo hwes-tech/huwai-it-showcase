@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>虎尾國小資訊成果網頁</title>
-    <link rel="stylesheet" href="styles.css?v=20260703-1945">
+    <link rel="stylesheet" href="styles.css?v=20260706-1200">
   </head>
   <body>
     <header class="site-header">
@@ -17,6 +17,7 @@
           <button class="nav-tab is-active" type="button" data-page="structure">課程架構</button>
           <button class="nav-tab" type="button" data-page="honor">榮譽榜</button>
           <button class="nav-tab" type="button" data-page="results">教學成果</button>
+          <button class="nav-tab" type="button" data-page="camp">營隊活動</button>
         </div>
       </nav>
     </header>
@@ -326,12 +327,74 @@
           </div>
         </article>
       </section>
+
+      <section class="page-panel" id="camp" data-page-panel="camp" hidden>
+        <div class="camp-layout">
+          <div class="result-copy">
+            <span class="pill green">程式設計與 3D 列印夏令營</span>
+            <h3>營隊活動紀錄</h3>
+            <p>本營隊以「做得出作品、看得懂原理、願意再修改」為核心，安排 7/6-7/9 四天課程，帶領三到五年級學生完成 Scratch 遊戲設計與 3D 筆蓋建模。前兩天從遊戲規則出發，學習角色、事件、分身、偵測、變數與除錯；後兩天從日常物件出發，認識 Tinkercad 建模、尺寸、孔洞、切片與列印限制。</p>
+            <div class="media-switch camp-day-tabs" role="tablist" aria-label="營隊活動日期切換">
+              <button class="media-switch-button is-active" type="button" data-camp-day="day1">第一天</button>
+              <button class="media-switch-button" type="button" data-camp-day="day2">第二天</button>
+              <button class="media-switch-button" type="button" data-camp-day="day3">第三天</button>
+              <button class="media-switch-button" type="button" data-camp-day="day4">第四天</button>
+            </div>
+          </div>
+
+          <article class="camp-day-panel is-visible" data-camp-day-panel="day1">
+            <figure class="camp-photo-card" data-camp-carousel>
+              <div class="camp-carousel-stage">
+                <img class="is-active" src="camp-activities/IMG_20260706_093531.jpg" alt="營隊第一天 Scratch 課程說明" data-note="課程一開始先展示打地鼠成品，讓學生觀察遊戲中有哪些元素：舞台背景、洞口位置、會出現的角色、玩家點擊後的反應，以及分數如何改變。">
+                <img src="camp-activities/IMG_20260706_103535.jpg" alt="營隊第一天教師示範打地鼠遊戲" data-note="教師把遊戲拆成可理解的小任務，帶學生看見分身、等待、顯示、隱藏與滑鼠點擊判斷如何組合成一個可玩的互動遊戲。">
+                <img src="camp-activities/IMG_20260706_110136.jpg" alt="學生製作打地鼠遊戲畫面" data-note="學生開始在 Scratch 中整理角色與背景，嘗試讓角色出現在指定位置，並測試點擊後是否能切換造型或消失。">
+                <img src="camp-activities/IMG_20260706_110140.jpg" alt="學生在 Scratch 中設計打地鼠遊戲" data-note="同桌學生一邊操作一邊討論洞口位置、角色大小與程式積木，從能動的最小版本逐步加上得分與美術設計。">
+                <img src="camp-activities/IMG_20260706_110149.jpg" alt="學生練習 Scratch 程式積木" data-note="學生依照自己的遊戲主題調整角色與出現節奏，學習遊戲好不好玩不只看程式數量，也和速度、位置、回饋效果有關。">
+                <img src="camp-activities/IMG_20260706_110156.jpg" alt="學生測試打地鼠遊戲" data-note="學生反覆測試作品，確認角色能自動出現與消失，並檢查滑鼠點擊後是否能加分、播放音效或切換被打到的造型。">
+                <img src="camp-activities/IMG_20260706_110216.jpg" alt="學生完成打地鼠互動設計" data-note="部分學生進一步加入倒數、不同角色或不同分數，讓作品從基本互動延伸成更完整的遊戲挑戰。">
+                <img src="camp-activities/IMG_20260706_110223.jpg" alt="學生操作 Scratch 打地鼠作品" data-note="課堂後段安排學生互玩與調整，透過同學試玩回饋，找出角色太大、速度太快或得分重複增加等問題。">
+                <img src="camp-activities/IMG_20260706_110230.jpg" alt="學生展示打地鼠作品畫面" data-note="每位學生的打地鼠作品都保留自己的設計選擇，有人調整背景與洞口，有人更換角色造型，也有人加入音效與計分規則。">
+                <img src="camp-activities/IMG_20260706_110237.jpg" alt="學生持續調整打地鼠程式" data-note="學生在完成可遊玩的版本後繼續除錯與美化，練習說明作品功能、遇到的問題，以及自己做過的一項修改。">
+              </div>
+              <button class="camp-arrow camp-arrow-prev" type="button" data-camp-prev aria-label="上一張照片"></button>
+              <button class="camp-arrow camp-arrow-next" type="button" data-camp-next aria-label="下一張照片"></button>
+              <p class="camp-photo-note">課程一開始先展示打地鼠成品，讓學生觀察遊戲中有哪些元素：舞台背景、洞口位置、會出現的角色、玩家點擊後的反應，以及分數如何改變。</p>
+            </figure>
+            <div class="camp-note">
+              <h4>第一天：Scratch 打地鼠遊戲設計</h4>
+              <p>第一天以「點擊會出現與消失的角色」為核心。學生先拆解打地鼠規則，再製作角色與背景，最後用 Scratch 完成分身、隨機等待、滑鼠點擊、造型切換、音效與加分。基礎任務是讓角色被點擊後消失，中階任務加入分數，進階學生可挑戰倒數、最高分或不同角色不同分數。</p>
+              <button class="primary-link-button" type="button" data-camp-result-link>查看打地鼠成果</button>
+            </div>
+          </article>
+
+          <article class="camp-day-panel" data-camp-day-panel="day2" hidden>
+            <div class="camp-empty">
+              <h4>第二天</h4>
+              <p>第二天主題為 Scratch 射擊外星人。學生從點擊遊戲延伸到射擊遊戲，學習讓大砲面向滑鼠、用分身產生子彈、讓外星人隨機出現並往下移動，最後透過碰撞偵測完成打中、加分與刪除分身。</p>
+            </div>
+          </article>
+
+          <article class="camp-day-panel" data-camp-day-panel="day3" hidden>
+            <div class="camp-empty">
+              <h4>第三天</h4>
+              <p>第三天進入 3D 列印與 Tinkercad。課程從實體筆蓋觀察開始，讓學生理解 3D 列印需要考慮尺寸、孔洞、壁厚與列印方向，再用基本幾何形狀、孔洞、對齊與群組完成筆蓋初版。</p>
+            </div>
+          </article>
+
+          <article class="camp-day-panel" data-camp-day-panel="day4" hidden>
+            <div class="camp-empty">
+              <h4>第四天</h4>
+              <p>第四天重點是修正模型、匯出 STL、切片預覽、安排列印與成果分享。學生依照檢查清單確認內孔、厚度、裝飾與模型底部，並用簡短發表說明作品特色、遇到的問題與修改方式。</p>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <p>虎尾國小資訊組</p>
     </footer>
 
-    <script src="script.js?v=20260703-1945"></script>
+    <script src="script.js?v=20260706-1200"></script>
   </body>
 </html>
