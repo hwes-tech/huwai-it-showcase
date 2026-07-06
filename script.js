@@ -19,6 +19,8 @@ const activePageTitle = document.querySelector("#active-page-title");
 const heroPageTitle = document.querySelector(".hero-page-title");
 const scratchPlayerFrame = document.querySelector("#scratch-player-frame");
 const scratchProjectButtons = document.querySelectorAll("[data-scratch-project]");
+const scratchToggleButtons = document.querySelectorAll("[data-scratch-toggle]");
+const scratchOptionGroups = document.querySelectorAll("[data-scratch-options]");
 const inkScapeCarousels = document.querySelectorAll("[data-inkscape-carousel]");
 const unpluggedCarousels = document.querySelectorAll("[data-unplugged-carousel]");
 const microbitCarousels = document.querySelectorAll("[data-microbit-carousel]");
@@ -101,9 +103,8 @@ mediaSwitchButtons.forEach((button) => {
       `[data-media-panel="${targetName}"] [data-scratch-project]`
     );
     if (activeScratchButton) {
-      scratchProjectButtons.forEach((item) => {
-        item.classList.toggle("is-active", item === activeScratchButton);
-      });
+      hideScratchOptionGroups();
+      setActiveScratchButton(activeScratchButton);
       loadScratchProject(activeScratchButton.dataset.scratchProject);
     }
   });
@@ -116,10 +117,39 @@ function loadScratchProject(projectPath) {
   scratchPlayerFrame.src = `https://turbowarp.org/embed?project_url=${encodeURIComponent(projectUrl)}`;
 }
 
+function hideScratchOptionGroups(exceptGroupName = "") {
+  scratchOptionGroups.forEach((group) => {
+    group.hidden = group.dataset.scratchOptions !== exceptGroupName;
+  });
+}
+
+function setActiveScratchButton(activeButton) {
+  scratchProjectButtons.forEach((item) => item.classList.toggle("is-active", item === activeButton));
+  scratchToggleButtons.forEach((item) => {
+    const optionGroup = document.querySelector(`[data-scratch-options="${item.dataset.scratchToggle}"]`);
+    item.classList.toggle("is-active", Boolean(optionGroup?.contains(activeButton)));
+  });
+}
+
 scratchProjectButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    scratchProjectButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+    const optionGroup = button.closest("[data-scratch-options]");
+    hideScratchOptionGroups(optionGroup?.dataset.scratchOptions);
+    setActiveScratchButton(button);
     loadScratchProject(button.dataset.scratchProject);
+  });
+});
+
+scratchToggleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const optionName = button.dataset.scratchToggle;
+    const optionGroup = document.querySelector(`[data-scratch-options="${optionName}"]`);
+    const firstProjectButton = optionGroup?.querySelector("[data-scratch-project]");
+    if (!firstProjectButton) return;
+
+    hideScratchOptionGroups(optionName);
+    setActiveScratchButton(firstProjectButton);
+    loadScratchProject(firstProjectButton.dataset.scratchProject);
   });
 });
 

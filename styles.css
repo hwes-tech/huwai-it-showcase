@@ -581,6 +581,24 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: flex-start;
+}
+
+.scratch-project-group {
+  display: contents;
+}
+
+.scratch-student-list {
+  display: flex;
+  flex-wrap: wrap;
+  order: 1;
+  flex-basis: 100%;
+  gap: 8px;
+}
+
+.scratch-project-list[hidden],
+.scratch-student-list[hidden] {
+  display: none;
 }
 
 .scratch-project-button {
@@ -598,6 +616,12 @@ h1 {
   color: #fff;
   border-color: var(--green);
   background: var(--green);
+}
+
+.scratch-student-button {
+  min-height: 34px;
+  padding: 0 11px;
+  font-size: .9rem;
 }
 
 .inkscape-gallery {
