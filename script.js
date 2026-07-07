@@ -102,15 +102,17 @@ campDayButtons.forEach((button) => {
   });
 });
 
-function showScratchGameResults() {
+function showScratchGameResults(event) {
+  const targetGame = event?.currentTarget?.dataset.campResultLink || "whack-mole";
+
   showPage("results");
   showResult("scratch");
 
   const scratchPanel = document.querySelector('[data-result-panel="scratch"]');
   const gameSwitchButton = scratchPanel?.querySelector('[data-media-target="scratch-games"]');
-  const whackMoleButton = scratchPanel?.querySelector('[data-scratch-toggle="whack-mole"]');
+  const targetGameButton = scratchPanel?.querySelector(`[data-scratch-toggle="${targetGame}"]`);
   gameSwitchButton?.click();
-  whackMoleButton?.click();
+  targetGameButton?.click();
   scratchPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
