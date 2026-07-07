@@ -138,7 +138,8 @@ mediaSwitchButtons.forEach((button) => {
       `[data-media-panel="${targetName}"] [data-scratch-project]`
     );
     if (activeScratchButton) {
-      hideScratchOptionGroups();
+      const optionGroup = activeScratchButton.closest("[data-scratch-options]");
+      hideScratchOptionGroups(optionGroup?.dataset.scratchOptions);
       setActiveScratchButton(activeScratchButton);
       loadScratchProject(activeScratchButton.dataset.scratchProject);
     }
