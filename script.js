@@ -29,6 +29,8 @@ const campDayButtons = document.querySelectorAll("[data-camp-day]");
 const campDayPanels = document.querySelectorAll("[data-camp-day-panel]");
 const campCarousels = document.querySelectorAll("[data-camp-carousel]");
 const campResultLinks = document.querySelectorAll("[data-camp-result-link]");
+const print3dResultLinks = document.querySelectorAll("[data-print3d-result-link]");
+const campGalleryToggles = document.querySelectorAll("[data-camp-gallery-toggle]");
 let activeSlide = 0;
 let touchStartX = 0;
 let heroAutoplayTimer;
@@ -118,6 +120,34 @@ function showScratchGameResults(event) {
 
 campResultLinks.forEach((button) => {
   button.addEventListener("click", showScratchGameResults);
+});
+
+function showPrint3dResults(event) {
+  const targetPanel = event?.currentTarget?.dataset.print3dResultLink || "print3d-pen-cap";
+
+  showPage("results");
+  showResult("print3d");
+
+  const print3dPanel = document.querySelector('[data-result-panel="print3d"]');
+  const targetButton = print3dPanel?.querySelector(`[data-media-target="${targetPanel}"]`);
+  targetButton?.click();
+  print3dPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+print3dResultLinks.forEach((button) => {
+  button.addEventListener("click", showPrint3dResults);
+});
+
+campGalleryToggles.forEach((button) => {
+  button.addEventListener("click", () => {
+    const panel = document.querySelector(`[data-camp-gallery-panel="${button.dataset.campGalleryToggle}"]`);
+    if (!panel) return;
+
+    const shouldShow = panel.hidden;
+    panel.hidden = !shouldShow;
+    button.classList.toggle("is-active", shouldShow);
+    button.textContent = shouldShow ? "收起第三天成果照片" : "查看第三天成果照片";
+  });
 });
 
 mediaSwitchButtons.forEach((button) => {

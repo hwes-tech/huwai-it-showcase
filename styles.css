@@ -556,6 +556,11 @@ h1 {
   gap: 16px;
 }
 
+.print3d-gallery {
+  display: grid;
+  gap: 16px;
+}
+
 .scratch-showcase {
   display: grid;
   gap: 16px;
@@ -925,6 +930,20 @@ h1 {
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 10px 22px rgba(22, 132, 95, .18);
+}
+
+.primary-link-button.is-active {
+  color: var(--green);
+  background: #fff;
+}
+
+.camp-result-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.camp-result-panel[hidden] {
+  display: none;
 }
 
 .camp-arrow-prev::before {
