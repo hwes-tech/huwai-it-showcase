@@ -310,7 +310,12 @@ autoCarousels.forEach((carousel) => {
   const dotGroup = carousel.querySelector(".honor-carousel-dots");
   const prevButton = carousel.querySelector("[data-carousel-prev]");
   const nextButton = carousel.querySelector("[data-carousel-next]");
-  if (images.length <= 1) return;
+  if (images.length <= 1) {
+    prevButton?.setAttribute("hidden", "");
+    nextButton?.setAttribute("hidden", "");
+    dotGroup?.setAttribute("hidden", "");
+    return;
+  }
 
   let activeImage = 0;
 
